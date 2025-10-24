@@ -1,30 +1,30 @@
 local utils = require "utils"
 
 -- General
--- map("n", "<leader>0", ":e<cr>")
--- map("n", "<leader><space>", ":noh<cr>", { silent = true })
-map("n", "<leader>s", ":w<cr>", { silent = true })
-map("n", "<leader>w", "<c-w>", { silent = true })
-map("n", "0", "^")
-map("", "$", "g_", { silent = true })
+map("n", "<leader>0", ":e<cr>", { desc = "Refresh buffer" })
+map("n", "<leader><space>", ":noh<cr>", { silent = true })
+map("n", "<leader>s", ":w<cr>", { silent = true, desc = "Save file" })
+map("n", "<leader>w", "<c-w>", { silent = true, desc = "Window commands" })
+map("n", "0", "^", { desc = "Jump to first non-blank character" })
+map("", "$", "g_", { silent = true, desc = "Jump to last non-blank character" })
 
 -- jk
-map("n", "j", function() utils.jump "j" end, { silent = true })
-map("n", "k", function() utils.jump "k" end, { silent = true })
+map("n", "j", function() utils.jump "j" end, { silent = true, desc = "Smart jump down" })
+map("n", "k", function() utils.jump "k" end, { silent = true, desc = "Smart jump up" })
 
 -- search
-map("n", "#", "#<S-N>", { silent = true })
-map("n", "*", "*<S-N>", { silent = true })
-map("v", "#", [[y?\V<C-R>=escape(@",'/\')<CR><CR><S-N>]])
-map("v", "*", [[y/\V<C-R>=escape(@",'/\')<CR><CR><S-N>]])
+map("n", "#", "#<S-N>", { silent = true, desc = "Search word backward without moving" })
+map("n", "*", "*<S-N>", { silent = true, desc = "Search word forward without moving" })
+map("v", "#", [[y?\V<C-R>=escape(@",'/\')<CR><CR><S-N>]], { desc = "Search selection backward" })
+map("v", "*", [[y/\V<C-R>=escape(@",'/\')<CR><CR><S-N>]], { desc = "Search selection forward" })
 
 -- replace
 -- map("v", "<leader>er", [[y/\V<C-R>=escape(@",'/\')<CR><CR>:%s/<C-r>"/]])
 -- map("v", "<space>er", [[y/\V<C-R>=escape(@",'/\')<CR><CR>:cfdo %s/<C-r>"/]])
 
 -- quit
-map("n", "<leader>q", utils.smart_quit, { silent = true })
-map("t", "<leader>q", "<C-\\><C-N>:q<CR>", { silent = true })
+map("n", "<leader>q", utils.smart_quit, { silent = true, desc = "Smart quit" })
+map("t", "<leader>q", "<C-\\><C-N>:q<CR>", { silent = true, desc = "Quit terminal" })
 
 -- gf
 -- map("", "gff", "gf")
@@ -33,9 +33,9 @@ map("t", "<leader>q", "<C-\\><C-N>:q<CR>", { silent = true })
 -- map("", "gft", "<c-w>gf")
 
 -- session
-map("n", "<space>ss", ":mksession!<CR>")
-map("n", "<space>sq", ":mksession!<CR>:qa<CR>")
-map("n", "<space>sl", utils.load_session, { silent = true })
+map("n", "<space>ss", ":mksession!<CR>", { desc = "Save session" })
+map("n", "<space>sq", ":mksession!<CR>:qa<CR>", { desc = "Save session and quit" })
+map("n", "<space>sl", utils.load_session, { silent = true, desc = "Load session" })
 
 -- macro
 -- map("x", "@", '":norm @" . getcharstr() . "<cr>"', { expr = true })
@@ -52,8 +52,8 @@ map("n", "<space>sl", utils.load_session, { silent = true })
 -- end
 
 -- quickfix and loclist
-map("n", "<leader>c", utils.toggle_quickfix, { silent = true })
-map("n", "<leader>l", utils.toggle_loclist, { silent = true })
+map("n", "<leader>c", utils.toggle_quickfix, { silent = true, desc = "Toggle quickfix list" })
+map("n", "<leader>l", utils.toggle_loclist, { silent = true, desc = "Toggle location list" })
 
 -- fold
 -- map("n", "zV", ":normal zMzvzz<CR>", { silent = true })
@@ -89,12 +89,12 @@ map("n", "<leader>l", utils.toggle_loclist, { silent = true })
 -- map("n", "<c-]><c-p>", "<c-w>g}", { remap = true })
 
 -- tab
-map("n", "]<tab>", "gt")
-map("n", "[<tab>", "gT")
-map("t", "]<tab>", "<c-\\><c-n>Ggt")
-map("t", "[<tab>", "<c-\\><c-n>GgT")
-map("n", "<leader>t", ":tabnew<cr>", { silent = true })
-map("n", "<leader>x", utils.tabclose, { silent = true })
+map("n", "]<tab>", "gt", { desc = "Next tab" })
+map("n", "[<tab>", "gT", { desc = "Previous tab" })
+map("t", "]<tab>", "<c-\\><c-n>Ggt", { desc = "Next tab (terminal)" })
+map("t", "[<tab>", "<c-\\><c-n>GgT", { desc = "Previous tab (terminal)" })
+map("n", "<leader>t", ":tabnew<cr>", { silent = true, desc = "New tab" })
+map("n", "<leader>x", utils.tabclose, { silent = true, desc = "Close tab" })
 
 -- keep center
 -- map('n', [[']], [["'" . nr2char(getchar()) . "zt"]], { expr = true })
@@ -106,10 +106,10 @@ map("n", "<leader>x", utils.tabclose, { silent = true })
 
 -- registers
 -- map('v', 'p', '"_dP') -- Don't copy the replaced text after pasting in visual mode
-map("", "gp", '"0p')
-map("", "gP", '"0P')
-map("", "<leader>y", '"*y')
-map("", "<leader>p", '"*p')
+map("", "gp", '"0p', { desc = "Paste from yank register" })
+map("", "gP", '"0P', { desc = "Paste before from yank register" })
+map("", "<leader>y", '"*y', { desc = "Yank to system clipboard" })
+map("", "<leader>p", '"*p', { desc = "Paste from system clipboard" })
 
 -- resize panes
 -- map("n", "<leader>w<Up>", ":10winc +<CR>", { silent = true })
