@@ -23,12 +23,12 @@ return {
       desc = "Find scripts",
       mode = { "n", "x" },
     },
-    {
-      "<space>fn",
-      function() Snacks.picker.files { cwd = vim.fs.normalize "$CLOUD/Notes" } end,
-      desc = "Find notes",
-      mode = { "n", "x" },
-    },
+    -- {
+    --   "<space>fn",
+    --   function() Snacks.picker.files { cwd = vim.fs.normalize "$CLOUD/Notes" } end,
+    --   desc = "Find notes",
+    --   mode = { "n", "x" },
+    -- },
     { "//", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     { "\\", ":Sgrep ", desc = "Grep" },
     {
@@ -55,13 +55,13 @@ return {
       end,
       desc = "Projects",
     },
-    {
-      "<leader>.",
-      function()
-        Snacks.scratch { ft = "markdown", filekey = { branch = false }, root = vim.fs.normalize "$CLOUD/Notes/scratch" }
-      end,
-      desc = "Toggle project note",
-    },
+    -- {
+    --   "<leader>.",
+    --   function()
+    --     Snacks.scratch { ft = "markdown", filekey = { branch = false }, root = vim.fs.normalize "$CLOUD/Notes/scratch" }
+    --   end,
+    --   desc = "Toggle project note",
+    -- },
     { "<space>gs", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
     { "<leader>S", function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
     { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History" },
@@ -69,7 +69,7 @@ return {
   },
   opts = {
     input = { enabled = true },
-    scratch = { root = vim.fs.normalize "$CLOUD/Notes/scratch" },
+    -- scratch = { root = vim.fs.normalize "$CLOUD/Notes/scratch" },
     statuscolumn = { enabled = true },
     notifier = { enabled = true },
     image = {

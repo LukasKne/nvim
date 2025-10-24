@@ -19,6 +19,7 @@ o.expandtab = true
 o.shiftwidth = 2
 o.list = true
 o.listchars = { tab = "→ ", trail = "·" }
+o.colorcolumn = "120"
 
 -- buffer
 -- o.switchbuf:append { "useopen" }
