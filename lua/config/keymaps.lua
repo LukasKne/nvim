@@ -141,3 +141,6 @@ vim.keymap.set("n", "<leader>fyl", [[:let @+=expand("%").":".line(".") | echo @+
 vim.keymap.set("n", "<space>gn", ":vert botright 80 new $CLOUD/Notes<CR>", { silent = true })
 vim.keymap.set("n", "<space>gt", ":botright 30 new $CLOUD/Notes/todo.md<CR>", { silent = true })
 vim.keymap.set("n", "<space>gh", ":vnew local.http<cr>", { silent = true })
+
+-- pack
+vim.keymap.set("n", "<space>ps", function() vim.pack.update() end)
