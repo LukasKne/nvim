@@ -19,8 +19,8 @@ map("v", "#", [[y?\V<C-R>=escape(@",'/\')<CR><CR><S-N>]], { desc = "Search selec
 map("v", "*", [[y/\V<C-R>=escape(@",'/\')<CR><CR><S-N>]], { desc = "Search selection forward" })
 
 -- replace
--- map("v", "<leader>er", [[y/\V<C-R>=escape(@",'/\')<CR><CR>:%s/<C-r>"/]])
--- map("v", "<space>er", [[y/\V<C-R>=escape(@",'/\')<CR><CR>:cfdo %s/<C-r>"/]])
+map("v", "<leader>er", [[y/\V<C-R>=escape(@",'/\')<CR><CR>:%s/<C-r>"/]])
+map("v", "<space>er", [[y/\V<C-R>=escape(@",'/\')<CR><CR>:cfdo %s/<C-r>"/]])
 
 -- quit
 map("n", "<leader>q", utils.smart_quit, { silent = true, desc = "Smart quit" })
