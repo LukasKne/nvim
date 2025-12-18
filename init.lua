@@ -1,5 +1,7 @@
 local start_time = vim.fn.reltime()
 
+vim.opt.shadafile = vim.fn.stdpath "config" .. "/shada/main.shada"
+
 require "globals"
 
 require "config.options"

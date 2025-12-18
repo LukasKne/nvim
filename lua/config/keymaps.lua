@@ -139,3 +139,6 @@ map("", "<leader>p", '"*p', { desc = "Paste from system clipboard" })
 -- map("n", "<space>gn", ":vert botright 80 new $CLOUD/Notes<CR>", { silent = true })
 -- map("n", "<space>gt", ":botright 10 new $CLOUD/Notes/todo.md<CR>", { silent = true })
 -- map("n", "<space>gh", ":vnew local.http<cr>", { silent = true })
+
+vim.keymap.set("n", "ü", "[", { remap = true })
+vim.keymap.set("n", "+", "]", { remap = true })

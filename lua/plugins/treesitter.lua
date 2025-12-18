@@ -4,6 +4,7 @@ return {
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   build = ":TSUpdate",
   opts = {
+    parser_install_dir = vim.fn.stdpath "config" .. "/parsers",
     auto_install = true,
     highlight = {
       enable = true,
