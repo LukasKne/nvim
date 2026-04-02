@@ -15,8 +15,8 @@ buf_map("n", "cd", ":vert Git diff")
 buf_map("n", "W", ":Git commit --no-verify<CR>")
 buf_map("n", "E", ":Git commit --amend --no-edit --no-verify")
 
-buf_map("n", "[ou", [[:Git branch -u origin/<c-r>=system('git branch --show-current')<CR><BS><CR>]])
-buf_map("n", "]ou", [[:Git branch -u origin/HEAD<CR>]])
+-- buf_map("n", "[ou", [[:Git branch -u origin/<c-r>=system('git branch --show-current')<CR><BS><CR>]])
+-- buf_map("n", "]ou", [[:Git branch -u origin/HEAD<CR>]])
 
 buf_map("n", "<leader>gd", ":vert Git diff --merge-base origin/HEAD<CR>")
 

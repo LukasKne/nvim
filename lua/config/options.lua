@@ -41,3 +41,6 @@ g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 -- markdown
 g.markdown_fenced_languages = { "ruby", "sql", "bash" }
+
+vim.opt.exrc = true
+vim.opt.secure = true

@@ -121,7 +121,7 @@ map("", "<leader>p", '"*p', { desc = "Paste from system clipboard" })
 -- File > Save As
 -- map("n", "<leader>fc", [[:saveas <C-R>=expand("%")<CR>]])
 -- File > Copy > Relative File Path
--- map("n", "<leader>fyy", [[:let @+=expand("%") | echo @+<CR>]], { silent = true })
+map("n", "<leader>fyy", [[:let @+=expand("%") | echo @+<CR>]], { silent = true })
 -- File > Copy > Full File Path
 -- map("n", "<leader>fyY", [[:let @+=expand("%:p") | echo @+<CR>]], { silent = true })
 -- File > Copy > File Content
@@ -131,13 +131,13 @@ map("", "<leader>p", '"*p', { desc = "Paste from system clipboard" })
 -- File > Copy > File Name with extension
 -- map("n", "<leader>fyN", [[:let @+=expand("%:t") | echo @+<CR>]], { silent = true })
 -- File > Copy > Relative File Path with Line number
--- map("n", "<leader>fyl", [[:let @+=expand("%").":".line(".") | echo @+<CR>]], { silent = true })
+map("n", "<leader>fyl", [[:let @+=expand("%").":".line(".") | echo @+<CR>]], { silent = true })
 -- File > Copy > Directory Path
 -- map('n', '<leader>fyd', [[ :let @+=expand("%:h") | echo @+<CR>             ]] , { silent = true })
 
 -- open files
 -- map("n", "<space>gn", ":vert botright 80 new $CLOUD/Notes<CR>", { silent = true })
--- map("n", "<space>gt", ":botright 10 new $CLOUD/Notes/todo.md<CR>", { silent = true })
+map("n", "<space>gt", ":botright 10 new $CLOUD/Notes/todo.md<CR>", { silent = true })
 -- map("n", "<space>gh", ":vnew local.http<cr>", { silent = true })
 
 vim.keymap.set("n", "ü", "[", { remap = true })
