@@ -24,6 +24,8 @@ return {
     { "<leader>gz", "<cmd>botright Gclog! -g stash | copen<CR>", desc = "Git stash" },
     { "<leader>gx", "<cmd>GBrowse<CR>", desc = "Git Browse" },
     { mode = "v", "<leader>gx", ":GBrowse<CR>", silent = true, desc = "Git Browse" },
+    { "<leader>gX", "<cmd>GBrowse!<CR>", desc = "Git Browse Copy URL" },
+    { mode = "v", "<leader>gX", ":GBrowse!<CR>", silent = true, desc = "Git Browse Copy URL" },
     { "<space>gg", [[<cmd>tab Git log -n 5000 --oneline --date=short --pretty=format:"%h %ad -%d %s (%an)"<cr>]] },
 
     -- vimdiff
