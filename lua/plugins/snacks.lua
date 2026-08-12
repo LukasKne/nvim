@@ -73,7 +73,8 @@ return {
     statuscolumn = { enabled = true },
     notifier = { enabled = true },
     image = {
-      enabled = true,
+      -- Kitty graphics responses can leak into buffers when Neovim runs inside tmux.
+      enabled = vim.env.TMUX == nil,
       doc = { inline = false },
     },
     scope = { enabled = true },
